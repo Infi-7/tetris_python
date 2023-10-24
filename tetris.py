@@ -166,14 +166,22 @@ def check_lost(positions):
     pass
  
 def get_shape():
-    pass
+    return random.choice(shapes)
  
  
 def draw_text_middle(text, size, color, surface):
     pass
    
 def draw_grid(surface, row, col):
-    pass
+    surface.fill((0,0,0))
+
+    pygame.font.init()
+    font = pygame.font.SYSFONT('comicsans', 60)
+    label = font.render('Tetris',1,(255,255,255))
+
+    surface.blit(label, (top_left_x + play_width/2 - label.getwidth()))
+    
+
  
 def clear_rows(grid, locked):
  
